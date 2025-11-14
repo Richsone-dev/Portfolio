@@ -30,7 +30,7 @@ a {
 /* -------------------- Navigation Bar -------------------- */
 .navbar {
     /*background-color: var(--dark-bg);*/
-    background-image: url('img2.jpg');
+    background-image: url('images/dark5.jpg');
     background-size: cover;       /* Ajuste l'image à la taille du conteneur */
     background-position: center;  /* Centre l'image */
     background-repeat: no-repeat; /* Empêche la répétition */
@@ -287,9 +287,6 @@ h2 {
     width: 100%;
 }
 
-.social-links {
-    margin-top: 20px;
-}
 .social-links1 a {
     font-size: 1.3em;
     margin:  15px;
@@ -299,6 +296,17 @@ h2 {
 .social-links1 a:hover {
     color: var(--primary-color);
     border-radius: 2px;
+}
+
+.social-links a {
+    font-size: 2em;
+    margin: 0 15px;
+    color: var(--text-color);
+    transition: color 0.3s;
+}
+
+.social-links {
+    margin-top: 20px;
 }
 
 .social-links a {
@@ -449,12 +457,6 @@ h2 {
     }
     .gallery-item img {
         height: 250px;
-        width: 10%;
-        height: 20px; /* C'est cette ligne que nous allons ajuster */
-        object-fit: cover; 
     }
 }
 
-.gallery-item img {
-    /* ... autres styles ... */
-}
