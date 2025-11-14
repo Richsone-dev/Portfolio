@@ -378,6 +378,76 @@ h2 {
     }
 }
 
+
+
+/* --- 1. Conteneur du Carrousel --- */
+.carousel-container {
+    position: relative; /* Pour positionner les flèches absolument */
+    max-width: 800px; /* Taille maximale de la zone d'affichage */
+    margin: 0 auto;
+}
+
+/* --- 2. Masque la Grille pour n'afficher qu'une seule image à la fois --- */
+.gallery-grid {
+    /* Retire les propriétés Grid pour un affichage simple d'une seule image */
+    display: block; 
+    overflow: hidden; /* S'assure que rien ne dépasse */
+    padding: 0;
+}
+
+/* --- 3. Gère les Slides --- */
+.carousel-slide {
+    display: none; /* Toutes les slides sont cachées par défaut */
+    box-shadow: none; /* Retire l'ombre portée de l'élément de la grille */
+    border-radius: 0;
+    
+    /* Assurez-vous que l'image remplit tout l'espace */
+    width: 100%;
+}
+
+.carousel-slide.active {
+    display: block; /* Seule la slide active est affichée */
+}
+
+/* --- 4. Flèches Directionnelles --- */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+    color: white;
+    border: none;
+    padding: 15px 10px;
+    cursor: pointer;
+    z-index: 10; /* S'assure qu'elles sont au-dessus de l'image */
+    font-size: 1.5em;
+    border-radius: 50%; /* Rondes */
+    transition: background-color 0.3s;
+}
+
+.arrow:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.prev-arrow {
+    left: 10px;
+}
+
+.next-arrow {
+    right: 10px;
+}
+
+/* 5. Ajustement de l'Image pour le Carrousel */
+.carousel-slide img {
+    width: 100%;
+    height: auto; /* Laisse la hauteur s'adapter (vous pouvez toujours utiliser une height fixe si vous préférez) */
+    max-height: 400px; /* Limite la hauteur pour les grands écrans */
+    object-fit: contain; /* Ajuste l'image pour qu'elle soit entièrement visible */
+    border-radius: 8px;
+}
+
+
+
 /*CSS pour la galerie d'images*/
 
 /* --- 1. Style de la Section Galerie --- */
@@ -459,4 +529,3 @@ h2 {
         height: 250px;
     }
 }
-
