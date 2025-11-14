@@ -30,7 +30,7 @@ a {
 /* -------------------- Navigation Bar -------------------- */
 .navbar {
     /*background-color: var(--dark-bg);*/
-    background-image: url('images/dark3.jpg');
+    background-image: url('images/dark5.jpg');
     background-size: cover;       /* Ajuste l'image à la taille du conteneur */
     background-position: center;  /* Centre l'image */
     background-repeat: no-repeat; /* Empêche la répétition */
