@@ -369,3 +369,92 @@ h2 {
         width: 80%;
     }
 }
+
+/*CSS pour la galerie d'images*/
+
+/* --- 1. Style de la Section Galerie --- */
+.gallery-section {
+    padding: 80px 5%;
+    text-align: center;
+}
+
+/* Vous pouvez réutiliser les styles de h2 pour le titre de la galerie */
+.gallery-section h2 i {
+    color: var(--secondary-color); /* Utilisation de la couleur d'accent pour l'icône */
+    margin-right: 10px;
+}
+
+/* --- 2. Grille de la Galerie (CSS Grid) --- */
+.gallery-grid {
+    /* Utilise CSS Grid pour la mise en page */
+    display: grid;
+    /* Crée des colonnes qui s'ajustent automatiquement (min 250px) */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px; /* Espace entre les images */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- 3. Style de chaque Élément de la Galerie --- */
+.gallery-item {
+    position: relative; /* Nécessaire pour positionner l'overlay */
+    overflow: hidden; /* Cache tout ce qui dépasse, y compris l'effet de zoom initial */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 300px; /* Taille fixe pour une galerie uniforme */
+    object-fit: cover; /* Recadre l'image pour couvrir la zone sans la déformer */
+    display: block;
+    /* Transition pour l'effet de zoom au survol */
+    transition: transform 0.4s ease-in-out; 
+}
+
+/* --- 4. Effet de Survol (Zoom et Overlay) --- */
+.gallery-item:hover img {
+    transform: scale(1.05); /* Zoom léger */
+}
+
+/* Overlay (texte qui apparaît au survol) */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(63, 81, 181, 0.7); /* Couleur primaire semi-transparente */
+    color: var(--light-text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* Caché par défaut */
+    transition: opacity 0.3s ease;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.gallery-item:hover .overlay {
+    opacity: 1; /* Apparaît au survol */
+}
+
+/* --- 5. Responsive Design (S'adapte aux petits écrans) --- */
+@media (max-width: 600px) {
+    .gallery-grid {
+        /* Passe à une seule colonne sur les très petits écrans */
+        grid-template-columns: 1fr; 
+    }
+    .gallery-item img {
+        height: 250px;
+        width: 10%;
+        height: 20px; /* C'est cette ligne que nous allons ajuster */
+        object-fit: cover; 
+    }
+}
+
+.gallery-item img {
+    /* ... autres styles ... */
+}
