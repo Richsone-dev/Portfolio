@@ -160,14 +160,27 @@ h2 {
 }
 
 /* -------------------- À Propos -------------------- */
-.about-content {
+.about-content .profile-pic {
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: left;
     gap: 40px;
     max-width: 1000px;
-    margin: 0 auto;
+    margin:auto;
+}
+
+.about-content{
+    display: block;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    gap: 40px;
+    max-width: 1000px;
+    margin:auto;
+    background-color: #555;
+    border-radius: 10px;
+    background: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
 .profile-pic {
@@ -179,10 +192,17 @@ h2 {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
+.about-text{
+    background-color: white;
+    border: 3px solid #3f51b5;
+    border-radius: 10px;
+}
+
 .about-text p {
     margin-bottom: 20px;
     font-size: 1.1em;
-    color: #555;
+    color: black;
+    margin: 2em;
 }
 
 /* -------------------- Compétences -------------------- */
@@ -396,6 +416,8 @@ h2 {
 
 /* --- 2. Masque la Grille pour n'afficher qu'une seule image à la fois --- */
 .gallery-grid {
+    border-color: 2px solid #555;
+    border-radius: 10px;
     /* Retire les propriétés Grid pour un affichage simple d'une seule image */
     display: block; 
     overflow: hidden; /* S'assure que rien ne dépasse */
@@ -479,4 +501,5 @@ h2 {
     overflow: hidden;
     /* Retirez display: block si vous l'aviez mis, et assurez-vous qu'il n'y ait pas de gap de grid */
     margin: 0 auto;
+
 }

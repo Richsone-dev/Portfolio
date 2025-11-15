@@ -90,7 +90,7 @@ a {
 /* --- Contenu Principal : Mise en page à deux colonnes --- */
 .main-content {
     display: flex;
-    min-height: 600px; /* S'assure d'une taille minimale */
+    min-height: 200px; /* S'assure d'une taille minimale */
 }
 
 .left-column {
@@ -244,18 +244,22 @@ h2 {
     color: #3f51b5;
 }
 
-.hero-content a {
+.hero-content {
     font-size: 1.2em;
     margin-bottom: 30px;
     font-weight: bold;
+    width: 600px;
+    text-align: center;
+    background-color: #3f51b5;
+}
+.hero-content a{
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    font-weight: bold;
+    color: white;
 }
 .hero-content a:hover{
-    border-bottom: 2px solid #3f51b5;
-    border-left: 2px solid #3f51b5;
-    border-top: 1px solid #3f51b5;
-    border-right: 0.8px solid #3f51b5;
-    border-radius: 6px;
-    background-color: #ffffff;
+    color: orange;
 }
 
 .hero {
