@@ -50,7 +50,7 @@ a {
     height: 100px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid #f8f8f8;
+    border: 3px solid var(--primary-color);
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
@@ -483,7 +483,7 @@ h2 {
 }
 
 .gallery-item img {
-    width: 100%;
+    width: 100px;
     height: 300px; /* Taille fixe pour une galerie uniforme */
     object-fit: cover; /* Recadre l'image pour couvrir la zone sans la déformer */
     display: block;
