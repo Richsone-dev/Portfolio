@@ -318,7 +318,7 @@ h2 {
     transition: color 0.3s;
 }
 .social-links1 a:hover {
-    color: var(--primary-color);
+    color: orange;
     border-radius: 2px;
 }
 
