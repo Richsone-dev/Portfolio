@@ -6,6 +6,7 @@
     --side-bg: #e8eaf6; /* Fond pour la colonne latérale (bleu très clair) */
     --border-color: #ccc;
     --spacing-unit: 20px;
+    --light-text: white; /* Ajoutée pour le bouton */
 }
 
 /* --- Base et Reset --- */
@@ -90,6 +91,7 @@ a {
 /* --- Contenu Principal : Mise en page à deux colonnes --- */
 .main-content {
     display: flex;
+    flex-direction: row;
     min-height: 200px; /* S'assure d'une taille minimale */
 }
 
@@ -99,19 +101,25 @@ a {
     padding: var(--spacing-unit);
 }
 
+/* 🏆 Mise à jour clé pour le positionnement du bouton (Conteneur parent) */
 .right-column {
     flex: 2.5; /* Prend environ 70% de l'espace */
     padding: var(--spacing-unit);
     padding-left: var(--spacing-unit) * 1.5; /* Plus d'espace à gauche */
     display: flex;
     flex-direction: column;
+    flex-grow: 1; /* Permet à la colonne de s'étendre pour correspondre à la hauteur de l'autre colonne */
 }
-
 
 
 /* --- Styles des sections --- */
 section {
     margin-bottom: var(--spacing-unit) * 1.5;
+}
+
+/* Évite une double marge pour la dernière section */
+.right-column section:last-of-type {
+    margin-bottom: 0;
 }
 
 h2 {
@@ -207,6 +215,59 @@ h2 {
     margin-bottom: 5px;
 }
 
+.Université{
+    font-weight: bold;
+    color: #3f51b5;
+}
+
+/* --- Styles pour le bouton "Retour" ancré en bas et centré --- */
+.hero {
+    /* 1. Ancrage en bas (margin-top: auto absorbe l'espace au-dessus) */
+    margin-top: auto; 
+    margin-bottom: 0; 
+    padding-top: var(--spacing-unit);
+    
+    /* 2. Centrage horizontal (Flexbox) */
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+
+.hero-content {
+    /* Centrage du contenu du bouton */
+    text-align: center;
+}
+
+.hero-content a{
+    font-size: 1.2em;
+    margin-bottom: 0; 
+    font-weight: bold;
+    color: white;
+}
+
+/* Boutons */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: bold;
+    margin: 0 10px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.primary-btn {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    border: 2px solid var(--primary-color);
+}
+
+.primary-btn:hover {
+    background-color: white;
+    border-color: #303f9f;
+    color: #303f9f;
+    transform: translateY(-2px);
+}
+
 /* --- Responsive Design --- */
 @media (max-width: 768px) {
     .main-content {
@@ -237,36 +298,10 @@ h2 {
         margin-top: 2px;
         font-size: 0.85em;
     }
+    
+    /* Réinitialiser l'effet margin-top: auto; en mode colonne pour qu'il soit juste en dessous */
+    .hero {
+        margin-top: var(--spacing-unit); 
+        margin-bottom: var(--spacing-unit); 
+    }
 }
-
-.Université{
-    font-weight: bold;
-    color: #3f51b5;
-}
-
-.hero-content {
-    font-size: 1.2em;
-    margin-bottom: 30px;
-    font-weight: bold;
-    width: 600px;
-    text-align: center;
-    background-color: #3f51b5;
-}
-.hero-content a{
-    font-size: 1.2em;
-    margin-bottom: 30px;
-    font-weight: bold;
-    color: white;
-}
-.hero-content a:hover{
-    color: orange;
-}
-
-.hero {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding-top: 0;
-}
-
